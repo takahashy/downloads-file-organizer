@@ -1,3 +1,9 @@
+'''
+file organizer
+2024 Jan 30
+
+Organizes files in the downloads folder into different folders.
+'''
 from pathlib import Path
 from datetime import datetime
 import PyPDF2
