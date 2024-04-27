@@ -1,4 +1,4 @@
-# Downloads File Organizer
+# Folder Organizer
 Program to organize files in my downloads directory. Have this file and a log
 file in the downloads directory to run it on the downloads directory. Look through 
 each file. If it has a pdf extension look at its content and if it is a cover 
