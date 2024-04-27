@@ -8,14 +8,14 @@ from pathlib import Path
 from datetime import datetime
 import PyPDF2
 
-CURR_DIR  = Path.cwd()
 CURR_FILE = Path(__file__)
+CURR_DIR  = CURR_FILE.parent
 WORK_RELATED = ["career", "employee", "salary"]
 WORK         = CURR_DIR / "work"
 PDFS         = CURR_DIR / "pdfs"
 PICS_VIDS    = CURR_DIR / "pics_vids"
 MAYBE_TRASH  = CURR_DIR / "maybe_trash"
-LOG_FILE     = "logfile.log"
+LOG_FILE     = CURR_DIR / "logfile.log"
 FAILED       = False
 
 '''
@@ -102,7 +102,7 @@ def main():
     makeDirs()
     for item in CURR_DIR.iterdir():
         if item.is_file():
-            if item != CURR_FILE and item.name != LOG_FILE:
+            if (item != CURR_FILE) and (item != LOG_FILE):
                 ext = item.suffix
                 if (ext == ".pdf") and isJobRelated(item):
                     move_file(item, WORK)
